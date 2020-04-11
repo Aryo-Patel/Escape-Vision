@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
+import AllSelectors from './components/subjectSelectorPage/AllSelectors';
+import Builder from './components/builder/Builder';
 
+/*This is the housing for every part of the application. Right now, when a user acceses the page, the only
+componnet that will show up will be the AllSelectors component. Through using links they can navigate to other
+things that are inside switches */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Route exact path = "/" component = {AllSelectors} />
+        <Switch>
+          <Route exact path = "/builder" component = {Builder} />
+        </Switch>
+    </BrowserRouter>
   );
 }
 

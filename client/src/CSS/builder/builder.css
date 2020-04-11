@@ -1,0 +1,75 @@
+/*This is all the styling for the Builder component */
+.builder-top-spacer {
+  height: 30px;
+}
+
+.builder-back-button {
+  margin: 20px;
+  text-decoration: none;
+  border: 3px solid #063f39;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.builder-back-button:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #063f39;
+  color: #ffffff;
+}
+
+.builder-container h3 {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.6em;
+  color: rgba(155, 73, 155, 0.8);
+}
+
+.builder-container .question-answer-container {
+  margin: 0 auto;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.builder-container .question-answer-container .questions-container {
+  text-align: center;
+}
+
+.builder-container .question-answer-container .questions-container ul > li {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.builder-container .question-answer-container .questions-container ul > li input {
+  padding: 10px;
+}
+
+.builder-container .question-answer-container .answers-container {
+  text-align: center;
+}
+
+.builder-container .question-answer-container .answers-container ul > li {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.builder-container .question-answer-container .answers-container ul > li input {
+  padding: 10px;
+}
+
+.builder-container .builder-submit {
+  margin: 0 auto;
+}
+/*# sourceMappingURL=builder.css.map */
