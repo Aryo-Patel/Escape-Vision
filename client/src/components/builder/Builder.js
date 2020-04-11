@@ -6,6 +6,8 @@ what subject they are going to be teaching. I am going to add some redux to the
 app so that the application can keep track of what subject the teacher is planning
 on teaching, but that will come later */
 
+
+//Currently working on allowing a user to upload a photo as a question
 const Builder = () => {
     //This code sets the number of questions that the teacher will add.
     //This will become a scalable value later on

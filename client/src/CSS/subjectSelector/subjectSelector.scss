@@ -1,0 +1,37 @@
+.all-subjects-container{
+    .all-subjects-header{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .subjects-flex-container{
+        display: grid;
+        
+        justify-content: space-between;
+        width: 60%;
+        margin: 0 auto;
+        .subject-selector-container{
+
+            .subject-selector-text{
+                transition: 0.4s;
+                margin: 10px;
+                border: 1px solid green;
+                text-align: center;
+                padding: 10px;
+                &:hover{
+                    cursor: pointer;
+                    background-color: green;
+                    color: white;
+                    transition: 0.4s;
+                }
+            }
+            .subject-selector-ul{
+                .subject-selector-li{
+                    list-style-type: disc;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    
+}
+
