@@ -37,8 +37,13 @@ $PurpleChoice: rgba(155, 73, 155, 0.8);
             ul > li {
                 padding: 5px;
                 list-style-type: none;
-                input{
-                    padding: 10px;
+                div{
+                    border: 1px solid grey;
+                    height: 100px;
+                    input{
+                        padding: 10px;
+                        margin-bottom: 5px;
+                    }
                 }
             }
         }
@@ -49,12 +54,28 @@ $PurpleChoice: rgba(155, 73, 155, 0.8);
                 list-style-type: none;
                 input{
                     padding: 10px;
+                    margin-bottom: 62.5px;
                 }
             }
         }
     }
 
-    .builder-submit{
-        margin: 0 auto;
+    .builder-input-holder {
+        text-align: center;
+        input{
+            color: #551A8B;
+            text-decoration: none;
+            border: 3px solid rgb(3, 141, 146);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: 0.4s;
+            &:hover{
+                transition: 0.4s;
+                cursor: pointer;
+                background-color: rgb(3, 141, 146);
+                color: #ffffff;
+            } 
+        }
     }
 }
