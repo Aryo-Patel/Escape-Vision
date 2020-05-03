@@ -49,8 +49,8 @@ const Builder = () => {
                     <span>Questions</span>
                     <ul>
     {/*mapping through the number of questions and creating an input for that */}
-                        {questionArray.map(question =>(
-                            <li id = {NUMBER_OF_QUESTIONS + question} className = "question-li">
+                        {questionArray.map((question, index) =>(
+                            <li key = {index} id = {NUMBER_OF_QUESTIONS + question} className = "question-li">
                                 <div className = 'question-image-text-holder'>
                                     <input type = 'file' accept = "image/*" />
                                     <input placeholder = {question}  required/>
@@ -63,8 +63,8 @@ const Builder = () => {
                     <span>Answers</span>
                     <ul>
     {/*mapping through the number of questions and creating an input for that */}
-                        {questionArray.map(answer =>(
-                            <li id = {answer} className = "question-li">
+                        {questionArray.map((answer, index) =>(
+                            <li key = {index} id = {answer} className = "question-li">
                                 <input placeholder = {answer} required/>
                             </li>
                         ))}
