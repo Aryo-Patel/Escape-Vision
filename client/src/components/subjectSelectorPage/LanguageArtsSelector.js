@@ -11,16 +11,20 @@ const LanguageArtsSelector = (props) =>{
     const [displayOn, toggleDisplay] = useState(false);
     return (
         <div className = "subject-selector-container">
-            <div className = "subject-selector-text" onClick = {e => toggleDisplay(!displayOn)}>
+            {/*Toggles the bottom borders of the components so that it looks flush */}
+            <div className = "subject-selector-text" onClick = {e => {
+                toggleDisplay(!displayOn);
+                e.target.classList.toggle('remove-bottom-borders');
+                }}>
                 <span>Language Arts</span>
             </div>
             {displayOn &&
             <Fragment>
                 <ul className = "subject-selector-ul">
                     {subjects.map(subject =>(
-                        <li key = {id++} className = "subject-selector-li">
-                            <Link to = "/builder">{subject}</Link>
-                        </li>
+                        <p key = {id++} className = "subject-selector-li">
+                            <Link className = "text" to = "/builder">{subject}</Link>
+                        </p>
                     ))}
                 </ul>
             </Fragment>}

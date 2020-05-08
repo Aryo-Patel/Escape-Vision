@@ -17,10 +17,12 @@ const AllSelectors = () =>{
                 <h1>Select what subject you would like to create a lesson for</h1>
             </div>
             <div className = 'subjects-flex-container'>
-                <MathSelector />
-                <ScienceSelector />
-                <LanguageArtsSelector />
-                <SocialStudiesSelector />
+                <div className ="subjects-container">
+                    <MathSelector />
+                    <ScienceSelector />
+                    <LanguageArtsSelector />
+                    <SocialStudiesSelector />
+                </div>
             </div>
             
         </div>

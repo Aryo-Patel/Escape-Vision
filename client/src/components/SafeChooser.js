@@ -21,10 +21,15 @@ const SafeChooser = props =>  {
     }
     return (
         <Fragment>
-            <h1>Choose your safe</h1>
-            {safesArray.map((safe, index) => (
-                <img key = {index} width = "200px" height = "200px" src = {require(`../images/safes/safe_${index+ 1}.jpg`)} alt = {`safe number ${index + 1}`} onClick = {e => goNext(e)}/>
-            ))}
+            <h1 className = "game-chooser-text">Choose your safe</h1>
+            <div className = "img-positioner">
+                {safesArray.map((safe, index) => (
+                    <div className= "img-holder">
+                        <img key = {index} width = "400px" height = "400px" src = {require(`../images/safes/safe_${index+ 1}.jpg`)} alt = {`safe number ${index + 1}`} onClick = {e => goNext(e)}/>
+                    </div>
+                ))}
+            </div>
+            
         </Fragment>
     )
 }

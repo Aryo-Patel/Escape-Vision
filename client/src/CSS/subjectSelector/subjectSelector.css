@@ -1,37 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    background-color: #004272;
+    line-height: 0;
+  }
+  to {
+    line-height: 1.5;
+    background-color: #004272;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: #004272;
+    line-height: 0;
+  }
+  to {
+    line-height: 1.5;
+    background-color: #004272;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #58cded;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 .all-subjects-container .all-subjects-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .all-subjects-container .subjects-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all-subjects-container .subjects-container {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   width: 60%;
   margin: 0 auto;
 }
 
-.all-subjects-container .subjects-flex-container .subject-selector-container .subject-selector-text {
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-text {
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  margin: 10px;
-  border: 1px solid green;
   text-align: center;
   padding: 10px;
+  background-color: #004272;
+  color: white;
+  border-radius: 10px;
 }
 
-.all-subjects-container .subjects-flex-container .subject-selector-container .subject-selector-text:hover {
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-text:hover {
   cursor: pointer;
-  background-color: green;
-  color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-.all-subjects-container .subjects-flex-container .subject-selector-container .subject-selector-ul .subject-selector-li {
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-ul {
+  height: 100%;
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+}
+
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-ul .subject-selector-li {
   list-style-type: disc;
   padding: 10px;
+  color: white;
+}
+
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-ul .subject-selector-li .text {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.all-subjects-container .subjects-container .subject-selector-container .subject-selector-ul .subject-selector-li .text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.remove-bottom-borders {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 /*# sourceMappingURL=subjectSelector.css.map */

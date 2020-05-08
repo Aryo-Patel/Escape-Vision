@@ -1,37 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes fadeIn{
+    from{
+        background-color: #004272;
+        line-height: 0;
+    }
+    to{
+        line-height: 1.5;
+        background-color: #004272;
+        transform: translateY(0);
+    }
+}
+body{
+    background-color: rgba(88, 205, 237, 1);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+}
 .all-subjects-container{
     .all-subjects-header{
         text-align: center;
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
     .subjects-flex-container{
+        display: flex;
+        height: 90vh;
+        width: 100%;
+        align-items: center;
+    }
+    .subjects-container{
         display: grid;
-        
-        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+        column-gap: 20px;
         width: 60%;
         margin: 0 auto;
         .subject-selector-container{
 
             .subject-selector-text{
                 transition: 0.4s;
-                margin: 10px;
-                border: 1px solid green;
                 text-align: center;
                 padding: 10px;
+                background-color: #004272;
+                color: white;
+                border-radius: 10px;
                 &:hover{
                     cursor: pointer;
-                    background-color: green;
-                    color: white;
                     transition: 0.4s;
+                    transform: scale(1.1);
                 }
             }
             .subject-selector-ul{
+                height: 100%;
+                animation: fadeIn 1s forwards;
                 .subject-selector-li{
                     list-style-type: disc;
                     padding: 10px;
+                    color: white;
+
+                    .text{
+                        margin: 10px;
+                        color: white;
+                        text-decoration: none;
+
+                        &:hover{
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
         }
     }
     
 }
+
+.remove-bottom-borders{
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
 

@@ -1,0 +1,100 @@
+.game-chooser-text {
+  margin-top: 10px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.img-positioner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 75vh;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.img-positioner .img-holder {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  max-width: 70%;
+  max-height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0.4;
+}
+
+.img-positioner .img-holder:hover {
+  opacity: 1;
+}
+
+.img-positioner .img-holder:hover > a {
+  opacity: 1;
+}
+
+.img-positioner .img-holder:hover > img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  max-width: 80%;
+  max-height: 80%;
+  cursor: pointer;
+}
+
+.img-positioner .img-holder img {
+  max-width: 70%;
+  max-height: 70%;
+  margin: 0 auto;
+}
+
+.img-positioner .img-holder a {
+  opacity: 0;
+  font-size: 1.3em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.img-positioner .img-holder a:hover {
+  text-decoration: underline;
+}
+
+.game-chooser-next {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  float: right;
+  margin-right: 15%;
+  height: 30px;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+}
+
+.game-chooser-next:hover {
+  background-color: white;
+  color: #004272;
+}
+
+.game-chooser-next a {
+  padding: 20px;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: white;
+}
+
+.game-chooser-next a:hover {
+  color: #004272;
+}
+/*# sourceMappingURL=gameChooser.css.map */

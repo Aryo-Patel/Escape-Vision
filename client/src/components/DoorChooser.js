@@ -24,10 +24,14 @@ const DoorChooser = props => {
     }
     return(
         <Fragment>
-            <h1>Choose the hidden door that that the person will escape from</h1>
-            {doorArray.map((door, index) => (
-                <img key = {index} src = {require(`../images/doors/door_${index+1}.jpg`)} width = "200px" height = "200px" alt = {`door_${index+1}`} onClick = {e => goNext(e)} />
-            ))}
+            <h1 className = "game-chooser-text">Choose the hidden door that that the person will escape from</h1>
+            <div className = "img-positioner">
+                {doorArray.map((door, index) => (
+                    <div className= "img-holder">
+                        <img key = {index} src = {require(`../images/doors/door_${index+1}.jpg`)} width = "400px" height = "400px" alt = {`door_${index+1}`} onClick = {e => goNext(e)} />
+                    </div>
+                ))}
+            </div>
         </Fragment>
     )
 }

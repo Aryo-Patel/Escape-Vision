@@ -6,7 +6,7 @@
 .builder-back-button {
   margin: 20px;
   text-decoration: none;
-  border: 3px solid #063f39;
+  border: 3px solid #004272;
   padding: 8px;
   border-radius: 5px;
   font-size: 1.2em;
@@ -17,7 +17,7 @@
 .builder-back-button:hover {
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-color: #063f39;
+  background-color: #004272;
   color: #ffffff;
 }
 
@@ -25,7 +25,7 @@
   text-align: center;
   text-decoration: underline;
   font-size: 1.6em;
-  color: rgba(155, 73, 155, 0.8);
+  color: #000;
 }
 
 .builder-container .question-answer-container {
@@ -44,7 +44,14 @@
 }
 
 .builder-container .question-answer-container .questions-container {
+  margin-top: 20px;
+  color: white;
   text-align: center;
+  background-color: #004272;
+  border-radius: 40px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 15px;
 }
 
 .builder-container .question-answer-container .questions-container ul > li {
@@ -53,20 +60,29 @@
 }
 
 .builder-container .question-answer-container .questions-container ul > li div {
-  border: 1px solid grey;
   height: 100px;
+  border-top: 2px solid grey;
 }
 
 .builder-container .question-answer-container .questions-container ul > li div input {
+  display: block;
   padding: 10px;
-  margin-bottom: 5px;
+  margin: 5px;
 }
 
 .builder-container .question-answer-container .answers-container {
+  margin-top: 20px;
   text-align: center;
+  background: #004272;
+  border-radius: 30px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 15px;
+  color: white;
 }
 
 .builder-container .question-answer-container .answers-container ul > li {
+  border-top: 2px solid grey;
   padding: 5px;
   list-style-type: none;
 }
@@ -81,9 +97,9 @@
 }
 
 .builder-container .builder-input-holder input {
-  color: #551A8B;
+  color: #004272;
   text-decoration: none;
-  border: 3px solid #038d92;
+  border: 3px solid #004272;
   padding: 8px;
   border-radius: 5px;
   font-size: 1.2em;
@@ -95,7 +111,7 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   cursor: pointer;
-  background-color: #038d92;
+  background-color: #004272;
   color: #ffffff;
 }
 /*# sourceMappingURL=builder.css.map */

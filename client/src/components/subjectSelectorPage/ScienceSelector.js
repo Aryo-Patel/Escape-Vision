@@ -11,16 +11,19 @@ const ScienceSelector = (props) =>{
     const [displayOn, toggleDisplay] = useState(false);
     return (
         <div className = "subject-selector-container">
-            <div className = "subject-selector-text" onClick = {e => toggleDisplay(!displayOn)}>
+            <div className = "subject-selector-text" onClick = {e => {
+                toggleDisplay(!displayOn);
+                e.target.classList.toggle('remove-bottom-borders');
+                }}>
                 <span >Science</span>
             </div>
             {displayOn &&
             <Fragment>
                 <ul className = "subject-selector-ul">
                     {subjects.map(subject =>(
-                        <li key = {id++} className = "subject-selector-li">
-                            <Link to = "/builder">{subject}</Link>
-                        </li>
+                        <p key = {id++} className = "subject-selector-li">
+                            <Link className = "text" to = "/builder">{subject}</Link>
+                        </p>
                     ))}
                 </ul>
             </Fragment>}

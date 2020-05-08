@@ -25,10 +25,15 @@ const QuestionContainer = props => {
 
     return(
         <Fragment>
-            <h1>Chose the image that the game will hide behind</h1>
-            {questionContainerArray.map((questionContainer, index) => (
-                <img key = {index} src = {require(`../images/question container/question_container_${index+1}.jpg`)} width= "200px" height = "200px" alt = {`question_container_${index+1}`} onClick = {e => goNext(e)} />
-            ))}
+            <h1 className = "game-chooser-text">Chose the image that the game will hide behind</h1>
+            <div className = "img-positioner">
+                {questionContainerArray.map((questionContainer, index) => (
+                    <div className = "img-holder">
+                        <img key = {index} src = {require(`../images/question container/question_container_${index+1}.jpg`)} width= "400px" height = "400px" alt = {`question_container_${index+1}`} onClick = {e => goNext(e)} />
+                    </div>
+                ))}
+            </div>
+
         </Fragment>
     )
 }

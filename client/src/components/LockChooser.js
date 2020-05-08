@@ -15,9 +15,16 @@ const LockChooser = props => {
 
     return(
         <Fragment>
-            <h1>Select your lock</h1>
-            <img src = {require('../images/masterLockPurple.jpg')} width = "200px" height = "200px" alt = "purple lock" onClick = {e => moveNext(e)}/>
-            <img src = {require('../images/masterLockBrass.jpg')} width = "200px" height = "200px" alt = "brass lock" onClick = {e => moveNext(e)}/>
+            <h1 className ="game-chooser-text">Select your lock</h1>
+            <div className = "img-positioner">
+                <div className= "img-holder">
+                    <img src = {require('../images/masterLockPurple.jpg')} alt = "purple lock" onClick = {e => moveNext(e)}/>
+                </div>
+                <div className= "img-holder">
+                    <img src = {require('../images/masterLockBrass.jpg')}  alt = "brass lock" onClick = {e => moveNext(e)}/>
+                </div>
+            </div>
+
         </Fragment>
     )
 }

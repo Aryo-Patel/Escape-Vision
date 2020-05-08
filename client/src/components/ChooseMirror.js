@@ -21,10 +21,15 @@ const ChooseMirror = props => {
     }
     return(
         <Fragment> 
-            <h1>Choose the mirror that the safe will be hidden behind</h1>
-            {mirrorArray.map((mirror, index) => (
-                <img key = {index} src = {require(`../images/mirrors/mirror_${index+1}.jpg`)} width = "200px" height = "200px" alt = {`mirror_${index+1}`} onClick = {e => goNext(e)}/>
-            ))}
+            <h1 className = "game-chooser-text">Choose the mirror that the safe will be hidden behind</h1>
+            <div className = "img-positioner">
+                {mirrorArray.map((mirror, index) => (
+                    <div className = "img-holder">
+                        <img key = {index} src = {require(`../images/mirrors/mirror_${index+1}.jpg`)} width = "400px" height = "400px" alt = {`mirror_${index+1}`} onClick = {e => goNext(e)}/>
+                    </div>
+                ))}
+            </div>
+   
         </Fragment>
     )
 }

@@ -21,10 +21,15 @@ const ClueChooser = props => {
     }
     return(
         <Fragment>
-            <h1>Choose the clue that the user must find</h1>
-            {cluesArray.map((clue, index) => (
-                <img key ={index} src = {require(`../images/clues/clue_${index+1}.jpg`)} width = "200px" height = "200px" alt = {`clue_${index+1}`} onClick = {e => goNext(e)}/>
-            ))}
+            <h1 className = "game-chooser-text">Choose the clue that the user must find</h1>
+            <div className ="img-positioner">
+                {cluesArray.map((clue, index) => (
+                    <div className = "img-holder">
+                        <img key ={index} src = {require(`../images/clues/clue_${index+1}.jpg`)} width = "400px" height = "400px" alt = {`clue_${index+1}`} onClick = {e => goNext(e)}/>
+                    </div>
+                ))}
+            </div>
+            
         </Fragment>
     )
 }
