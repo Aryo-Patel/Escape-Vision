@@ -1,7 +1,12 @@
 import React, {Fragment} from 'react';
 import {useHistory} from 'react-router-dom';
 
-const ClueChooser = props => {
+
+//redux imports
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {addClue} from '../actions/userSelections';
+const ClueChooser = ({addClue}) => {
     //creates history instance that allows an image to move the user on to chosing the image that contains the questions
     let history = useHistory();
 
@@ -14,6 +19,9 @@ const ClueChooser = props => {
 
     //function for when an image is clicked, passes on the image's alt data and redirects the user to a page where they select the image that contains the questions
     function goNext(e){
+
+        addClue(e.target.src);
+
         history.push({
             pathname: '/choose-question-container',
             state: e.target.alt
@@ -24,7 +32,7 @@ const ClueChooser = props => {
             <h1 className = "game-chooser-text">Choose the clue that the user must find</h1>
             <div className ="img-positioner">
                 {cluesArray.map((clue, index) => (
-                    <div className = "img-holder">
+                    <div key = {index} className = "img-holder">
                         <img key ={index} src = {require(`../images/clues/clue_${index+1}.jpg`)} width = "400px" height = "400px" alt = {`clue_${index+1}`} onClick = {e => goNext(e)}/>
                     </div>
                 ))}
@@ -34,5 +42,7 @@ const ClueChooser = props => {
     )
 }
 
-
-export default ClueChooser;
+ClueChooser.propTypes = {
+    addClue: PropTypes.func.isRequired
+}
+export default connect(null, {addClue})(ClueChooser);

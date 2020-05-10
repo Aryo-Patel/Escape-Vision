@@ -1,13 +1,24 @@
 import React, {useState, Fragment} from 'react';
 import {Link} from 'react-router-dom';
 
+
+//redux imports
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types'; //using it for redux purposes so im putting it as a redux import
+import {addSubjectSelection} from '../../actions/userSelections.js';
+
+
 /*This is the demo of the language arts prototype for a lesson. The teacher can select one of three lessons
 to teach when they click on the subject. This will be changed later when we have a database of features
 so that the teacher can use a search bar to find exactly what subjects they want to add */
 
-const LanguageArtsSelector = (props) =>{
+const LanguageArtsSelector = ({addSubjectSelection}) =>{
+
+    //implementation will be changed once we move to a database
     const subjects = ['Critical Reading', 'Writing', 'Poetry', 'Presentational Speaking'];
     let id = 0;
+
+    //will change whether the topics in the subject are displayed or not
     const [displayOn, toggleDisplay] = useState(false);
     return (
         <div className = "subject-selector-container">
@@ -23,7 +34,7 @@ const LanguageArtsSelector = (props) =>{
                 <ul className = "subject-selector-ul">
                     {subjects.map(subject =>(
                         <p key = {id++} className = "subject-selector-li">
-                            <Link className = "text" to = "/builder">{subject}</Link>
+                            <Link onClick = {e => addSubjectSelection("language arts", e.target.textContent)} className = "text" to = "/builder">{subject}</Link>
                         </p>
                     ))}
                 </ul>
@@ -32,4 +43,8 @@ const LanguageArtsSelector = (props) =>{
     )
 }
 
-export default LanguageArtsSelector;
+LanguageArtsSelector.propTypes = {
+    addSubjectSelection  : PropTypes.func.isRequired
+}
+
+export default connect(null, {addSubjectSelection})(LanguageArtsSelector);

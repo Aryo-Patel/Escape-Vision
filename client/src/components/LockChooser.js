@@ -1,12 +1,18 @@
 import React, {Fragment} from 'react';
 import {useHistory} from 'react-router-dom';
 
+//redux imports
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {addLock} from '../actions/userSelections';
 
-const LockChooser = props => {
+const LockChooser = ({addLock}) => {
     let history = useHistory();
 
     function moveNext(e) {
-        console.log('clicked');
+        
+        addLock(e.target.src);
+
         history.push({
             pathname: '/safe-chooser',
             state: e.target.alt
@@ -28,5 +34,8 @@ const LockChooser = props => {
         </Fragment>
     )
 }
+LockChooser.propTypes = {
+    addLock: PropTypes.func.isRequired
+}
 
-export default LockChooser;
+export default connect(null, {addLock})(LockChooser);
