@@ -6,7 +6,7 @@
 .builder-back-button {
   margin: 20px;
   text-decoration: none;
-  border: 3px solid #004272;
+  border: 3px solid #9e122b;
   padding: 8px;
   border-radius: 5px;
   font-size: 1.2em;
@@ -17,7 +17,7 @@
 .builder-back-button:hover {
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-color: #004272;
+  background-color: #9e122b;
   color: #ffffff;
 }
 
@@ -44,13 +44,10 @@
 }
 
 .builder-container .question-answer-container .questions-container {
+  width: 100%;
   margin-top: 20px;
   color: white;
   text-align: center;
-  background-color: #004272;
-  border-radius: 40px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   padding: 15px;
 }
 
@@ -60,36 +57,82 @@
 }
 
 .builder-container .question-answer-container .questions-container ul > li div {
-  height: 100px;
-  border-top: 2px solid grey;
-}
-
-.builder-container .question-answer-container .questions-container ul > li div input {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border: 4px solid #9e122b;
   padding: 10px;
-  margin: 5px;
+  border-radius: 10px;
 }
 
-.builder-container .question-answer-container .answers-container {
-  margin-top: 20px;
-  text-align: center;
-  background: #004272;
-  border-radius: 30px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  padding: 15px;
-  color: white;
+.builder-container .question-answer-container .questions-container ul > li div label {
+  color: black;
+  width: 30px;
+  height: 30px;
+  background-color: #9e122b;
 }
 
-.builder-container .question-answer-container .answers-container ul > li {
-  border-top: 2px solid grey;
-  padding: 5px;
-  list-style-type: none;
+.builder-container .question-answer-container .questions-container ul > li div label:hover {
+  cursor: pointer;
 }
 
-.builder-container .question-answer-container .answers-container ul > li input {
-  padding: 10px;
-  margin-bottom: 62.5px;
+.builder-container .question-answer-container .questions-container ul > li div label #upload-image {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div {
+  border: none;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div input[type="text"] {
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid grey;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div input[type="text"]:focus {
+  outline: none;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div input[type="text"]:focus + small {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1rem;
+  top: -0.9rem;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div input[type="text"]:valid + small {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1rem;
+  top: -0.9rem;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div div small {
+  top: 0.6rem;
+  font-size: 1.2rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+  pointer-events: none;
+  color: grey;
+  position: absolute;
+}
+
+.builder-container .question-answer-container .questions-container ul > li div input[type="file"] {
+  display: none;
 }
 
 .builder-container .builder-input-holder {
@@ -97,9 +140,9 @@
 }
 
 .builder-container .builder-input-holder input {
-  color: #004272;
+  color: #9e122b;
   text-decoration: none;
-  border: 3px solid #004272;
+  border: 3px solid #9e122b;
   padding: 8px;
   border-radius: 5px;
   font-size: 1.2em;
@@ -111,7 +154,31 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   cursor: pointer;
-  background-color: #004272;
+  background-color: #9e122b;
   color: #ffffff;
+}
+
+@-webkit-keyframes moveSmallUp {
+  from {
+    top: 0;
+  }
+  50% {
+    top: -5%;
+  }
+  to {
+    top: -10%;
+  }
+}
+
+@keyframes moveSmallUp {
+  from {
+    top: 0;
+  }
+  50% {
+    top: -5%;
+  }
+  to {
+    top: -10%;
+  }
 }
 /*# sourceMappingURL=builder.css.map */

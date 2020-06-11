@@ -1,5 +1,6 @@
 import React from 'react';
-import {Route, Switch, BrowserRouter} from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import SelectGradeLevel from './components/SelectGradeLevel';
 import AllSelectors from './components/subjectSelectorPage/AllSelectors';
 import Builder from './components/builder/Builder';
 import GameChoooser from './components/GameChooser';
@@ -12,7 +13,7 @@ import QuestionContainer from './components/QuestionContainer';
 import Confirm from './components/Confirm';
 
 //imports to set up redux
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 
 
@@ -21,23 +22,24 @@ componnet that will show up will be the AllSelectors component. Through using li
 things that are inside switches */
 function App() {
   return (
-    <Provider store = {store}>
-        <BrowserRouter>
-            <Route exact path = "/" component = {AllSelectors} />
-            <Switch>
-              <Route exact path = "/builder" component = {Builder} />
-              <Route exact path = "/game-chooser" component = {GameChoooser} />
-              <Route exact path = "/lock-chooser" component = {LockChooser} />
-              <Route exact path = "/safe-chooser" component = {SafeChooser} />
-              <Route exact path = "/choose-mirror" component = {ChooseMirror} />
-              <Route exact path = "/door-chooser" component = {DoorChooser} />
-              <Route exact path = "/clue-chooser" component = {ClueChooser} />
-              <Route exact path = "/choose-question-container" component = {QuestionContainer} />
-              <Route exacct path = "/confirm" component = {Confirm} />
-            </Switch>
-        </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Route exact path="/" component={SelectGradeLevel} />
+        <Switch>
+          <Route exact path="/select-subject" component={AllSelectors} />
+          <Route exact path="/builder" component={Builder} />
+          <Route exact path="/game-chooser" component={GameChoooser} />
+          <Route exact path="/lock-chooser" component={LockChooser} />
+          <Route exact path="/safe-chooser" component={SafeChooser} />
+          <Route exact path="/choose-mirror" component={ChooseMirror} />
+          <Route exact path="/door-chooser" component={DoorChooser} />
+          <Route exact path="/clue-chooser" component={ClueChooser} />
+          <Route exact path="/choose-question-container" component={QuestionContainer} />
+          <Route exacct path="/confirm" component={Confirm} />
+        </Switch>
+      </BrowserRouter>
     </Provider>
-    
+
   );
 }
 

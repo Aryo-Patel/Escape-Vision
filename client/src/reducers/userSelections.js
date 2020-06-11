@@ -1,5 +1,7 @@
 //all of the potential actions from the types file in the actions folder
 import {
+    GRADE_SELECTION_SUBMITTED,
+    GRADE_SELECTION_FAILED,
     SUBJECT_SELECTION_SUBMITTED,
     SUBJECT_SELECTION_FAILED,
     QUESTION_ANSWERS_SUBMITTED,
@@ -18,9 +20,10 @@ import {
     CLUE_CHOOSER_FAILED,
     QUESTION_CONTAINER_SUBMITTED,
     QUESTION_CONTAINER_FAILED
-}from '../actions/types';
+} from '../actions/types';
 
 const initialState = {
+    grade: null,
     subjectSelection: {
         category: null,
         courseName: null
@@ -32,19 +35,24 @@ const initialState = {
     mirrorChooser: null,
     doorChooser: null,
     clueChooser: null,
-    questionContainer: null  
+    questionContainer: null
 };
 
-export default function(state = initialState, action){
-    const {type, payload}  = action;
+export default function (state = initialState, action) {
+    const { type, payload } = action;
 
-    switch(type){
+    switch (type) {
+        case GRADE_SELECTION_SUBMITTED:
+            return {
+                ...state,
+                grade: payload
+            }
         case SUBJECT_SELECTION_SUBMITTED:
-            return{
+            return {
                 ...state,
                 subjectSelection: payload
             }
-        case  QUESTION_ANSWERS_SUBMITTED:
+        case QUESTION_ANSWERS_SUBMITTED:
             return {
                 ...state,
                 questionAnswerPairs: payload
@@ -55,31 +63,31 @@ export default function(state = initialState, action){
                 lockChooser: payload
             }
         case SAFE_CHOOSER_SUBMITTED:
-            return{
+            return {
                 ...state,
                 safeChooser: payload
             }
         case MIRROR_CHOOSER_SUBMITTED:
-            return{
+            return {
                 ...state,
                 mirrorChooser: payload
             }
         case DOOR_CHOOSER_SUBMITTED:
-            return{
+            return {
                 ...state,
                 doorChooser: payload
             }
         case CLUE_CHOOSER_SUBMITTED:
-            return{
+            return {
                 ...state,
                 clueChooser: payload
             }
         case QUESTION_CONTAINER_SUBMITTED:
-            return{
+            return {
                 ...state,
                 questionContainer: payload
             }
         default:
-            return {...state}
+            return { ...state }
     }
 }

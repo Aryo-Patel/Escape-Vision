@@ -1,5 +1,7 @@
 //all the user selection imports from the types.js file
 import {
+    GRADE_SELECTION_SUBMITTED,
+    GRADE_SELECTION_FAILED,
     SUBJECT_SELECTION_SUBMITTED,
     SUBJECT_SELECTION_FAILED,
     QUESTION_ANSWERS_SUBMITTED,
@@ -18,8 +20,16 @@ import {
     CLUE_CHOOSER_FAILED,
     QUESTION_CONTAINER_SUBMITTED,
     QUESTION_CONTAINER_FAILED
-}from './types';
+} from './types';
 
+
+//grade selection
+export const addGradeSelection = grade => dispatch => {
+    dispatch({
+        type: GRADE_SELECTION_SUBMITTED,
+        payload: grade
+    });
+}
 //subject selection
 export const addSubjectSelection = (category, courseName) => dispatch => {
     dispatch({
@@ -32,7 +42,7 @@ export const addSubjectSelection = (category, courseName) => dispatch => {
 }
 
 //question answer pairs
-export const addQuestionAnswers = (questionAnswerArray) =>  dispatch =>{
+export const addQuestionAnswers = (questionAnswerArray) => dispatch => {
     // let questionAnswerArray = [];
     // for(let i = 0; i < questionArray.length; i++){
     //     let individualQuestionAnswer = {
@@ -82,7 +92,7 @@ export const addDoor = door => dispatch => {
 }
 
 //adds the clue selection
-export const addClue = clue =>dispatch => {
+export const addClue = clue => dispatch => {
     dispatch({
         type: CLUE_CHOOSER_SUBMITTED,
         payload: clue

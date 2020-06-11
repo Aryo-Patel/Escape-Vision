@@ -7,12 +7,12 @@
 
 @-webkit-keyframes fadeIn {
   from {
-    background-color: #004272;
+    background-color: #9e122b;
     line-height: 0;
   }
   to {
     line-height: 1.5;
-    background-color: #004272;
+    background-color: #9e122b;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
@@ -20,21 +20,19 @@
 
 @keyframes fadeIn {
   from {
-    background-color: #004272;
+    background-color: #9e122b;
     line-height: 0;
   }
   to {
     line-height: 1.5;
-    background-color: #004272;
+    background-color: #9e122b;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 }
 
 body {
-  background-color: #58cded;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3)));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  background-color: #fff;
 }
 
 .all-subjects-container .all-subjects-header {
@@ -70,7 +68,7 @@ body {
   transition: 0.4s;
   text-align: center;
   padding: 10px;
-  background-color: #004272;
+  background-color: #9e122b;
   color: white;
   border-radius: 10px;
 }
@@ -109,5 +107,144 @@ body {
 .remove-bottom-borders {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+}
+
+.grade-selector {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grade-selector .top-ul {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50%;
+  list-style-type: none;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 80%;
+  height: 100%;
+}
+
+.grade-selector .top-ul li {
+  min-width: 135px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.grade-selector .top-ul li span {
+  display: inline-block;
+  width: 100%;
+  background-color: #9e122b;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.grade-selector .top-ul li:hover {
+  cursor: pointer;
+}
+
+.grade-selector .top-ul li > ul {
+  list-style: none;
+  display: none;
+}
+
+.grade-selector .top-ul li > ul li {
+  margin: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.grade-selector .top-ul li > ul li:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.grade-selector .top-ul li:hover > ul {
+  display: block;
+  -webkit-animation: liAppear 0.7s forwards;
+          animation: liAppear 0.7s forwards;
+}
+
+.grade-selector .top-ul li:last-child {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.grade-selector .top-ul li:last-child:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@-webkit-keyframes liAppear {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes liAppear {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes liDisappear {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes liDisappear {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=subjectSelector.css.map */
